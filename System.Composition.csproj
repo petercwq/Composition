@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CCFD0A0D-1401-4B58-8DAA-69A862468B41}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Composition</RootNamespace>
+    <AssemblyName>System.Composition</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Convention\AttributedModelProvider.cs" />
+    <Compile Include="ExportAttribute.cs" />
+    <Compile Include="ExportMetadataAttribute.cs" />
+    <Compile Include="ImportAttribute.cs" />
+    <Compile Include="ImportingConstructorAttribute.cs" />
+    <Compile Include="ImportManyAttribute.cs" />
+    <Compile Include="ImportMetadataConstraintAttribute.cs" />
+    <Compile Include="MetadataAttributeAttribute.cs" />
+    <Compile Include="OnImportsSatisfiedAttribute.cs" />
+    <Compile Include="PartMetadataAttribute.cs" />
+    <Compile Include="PartNotDiscoverableAttribute.cs" />
+    <Compile Include="SharedAttribute.cs" />
+    <Compile Include="SharingBoundaryAttribute.cs" />
+    <Compile Include="Microsoft\Composition\Diagnostics\CompositionTrace.cs" />
+    <Compile Include="Microsoft\Composition\Diagnostics\CompositionTraceId.cs" />
+    <Compile Include="Microsoft\Composition\Diagnostics\CompositionTraceSource.cs" />
+    <Compile Include="Microsoft\Composition\Diagnostics\SilverlightTraceWriter.cs" />
+    <Compile Include="Microsoft\Composition\Diagnostics\TraceSourceTraceWriter.cs" />
+    <Compile Include="Microsoft\Composition\Diagnostics\TraceWriter.cs" />
+    <Compile Include="Microsoft\Internal\Assumes.cs" />
+    <Compile Include="Microsoft\Internal\Assumes.InternalErrorException.cs" />
+    <Compile Include="Microsoft\Internal\AttributeServices.cs" />
+    <Compile Include="Microsoft\Internal\Lock.cs" />
+    <Compile Include="Microsoft\Internal\Lock.Reader.cs" />
+    <Compile Include="Microsoft\Internal\Lock.Writer.cs" />
+    <Compile Include="Microsoft\Internal\ReflectionServices.cs" />
+    <Compile Include="Microsoft\Internal\Requires.cs" />
+    <Compile Include="Convention\ConventionBuilder.cs" />
+    <Compile Include="Convention\ExportConventionBuilder.cs" />
+    <Compile Include="Convention\ImportConventionBuilder.cs" />
+    <Compile Include="Convention\ParameterImportConventionBuilder.cs" />
+    <Compile Include="Convention\PartConventionBuilder.cs" />
+    <Compile Include="Convention\PartConventionBuilderOfT.cs" />
+    <Compile Include="ExceptionBuilder.cs" />
+    <Compile Include="Hosting\CompositionHost.cs" />
+    <Compile Include="Hosting\Core\CompositeActivator.cs" />
+    <Compile Include="Hosting\Core\CompositionDependency.cs" />
+    <Compile Include="Hosting\Core\CompositionOperation.cs" />
+    <Compile Include="Hosting\Core\CycleBreakingExportDescriptor.cs" />
+    <Compile Include="Hosting\Core\CycleBreakingMetadataDictionary.cs" />
+    <Compile Include="Hosting\Core\DependencyAccessor.cs" />
+    <Compile Include="Hosting\Core\DirectExportDescriptor.cs" />
+    <Compile Include="Hosting\Core\ExportDescriptor.cs" />
+    <Compile Include="Hosting\Core\ExportDescriptorPromise.cs" />
+    <Compile Include="Hosting\Core\ExportDescriptorProvider.cs" />
+    <Compile Include="Hosting\Core\ExportDescriptorRegistry.cs" />
+    <Compile Include="Hosting\Core\ExportDescriptorRegistryUpdate.cs" />
+    <Compile Include="Hosting\Core\LifetimeContext.cs" />
+    <Compile Include="Hosting\Core\UpdateResult.cs" />
+    <Compile Include="Hosting\Providers\Constants.cs" />
+    <Compile Include="Hosting\Providers\CurrentScope\CurrentScopeExportDescriptorProvider.cs" />
+    <Compile Include="Hosting\Providers\ExportFactory\ExportFactoryExportDescriptorProvider.cs" />
+    <Compile Include="Hosting\Providers\ExportFactory\ExportFactoryWithMetadataExportDescriptorProvider.cs" />
+    <Compile Include="Hosting\Providers\ImportMany\ImportManyExportDescriptorProvider.cs" />
+    <Compile Include="Hosting\Providers\Lazy\LazyExportDescriptorProvider.cs" />
+    <Compile Include="Hosting\Providers\Lazy\LazyWithMetadataExportDescriptorProvider.cs" />
+    <Compile Include="Hosting\Util\Formatters.cs" />
+    <Compile Include="Hosting\Util\MetadataViewProvider.cs" />
+    <Compile Include="Hosting\Util\MethodInfoExtensions.cs" />
+    <Compile Include="Hosting\Util\SmallSparseInitonlyArray.cs" />
+    <Compile Include="Microsoft\Internal\ThrowHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CompositionContext.cs" />
+    <Compile Include="ExportFactoryOfT.cs" />
+    <Compile Include="ExportFactoryOfTTMetadata.cs" />
+    <Compile Include="ExportOfT.cs" />
+    <Compile Include="Hosting\CompositionFailedException.cs" />
+    <Compile Include="Hosting\Core\CompositionContract.cs" />
+    <Compile Include="Runtime\Util\Formatters.cs" />
+    <Compile Include="CompositionContextExtensions.cs" />
+    <Compile Include="Debugging\ContainerConfigurationDebuggerProxy.cs" />
+    <Compile Include="Debugging\DiscoveredPartDebuggerProxy.cs" />
+    <Compile Include="Hosting\ContainerConfiguration.cs" />
+    <Compile Include="TypedParts\ActivationFeatures\ActivationFeature.cs" />
+    <Compile Include="TypedParts\ActivationFeatures\DisposalFeature.cs" />
+    <Compile Include="TypedParts\ActivationFeatures\LifetimeFeature.cs" />
+    <Compile Include="TypedParts\ActivationFeatures\OnImportsSatisfiedFeature.cs" />
+    <Compile Include="TypedParts\ActivationFeatures\PropertyImportSite.cs" />
+    <Compile Include="TypedParts\ActivationFeatures\PropertyInjectionFeature.cs" />
+    <Compile Include="TypedParts\ContractHelpers.cs" />
+    <Compile Include="TypedParts\Discovery\DiscoveredExport.cs" />
+    <Compile Include="TypedParts\Discovery\DiscoveredInstanceExport.cs" />
+    <Compile Include="TypedParts\Discovery\DiscoveredPart.cs" />
+    <Compile Include="TypedParts\Discovery\DiscoveredPropertyExport.cs" />
+    <Compile Include="TypedParts\Discovery\ParameterImportSite.cs" />
+    <Compile Include="TypedParts\Discovery\TypeInspector.cs" />
+    <Compile Include="TypedParts\ImportInfo.cs" />
+    <Compile Include="TypedParts\TypedPartExportDescriptorProvider.cs" />
+    <Compile Include="TypedParts\Util\AttributedModelProviderExtensions.cs" />
+    <Compile Include="TypedParts\Util\DirectAttributeContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
